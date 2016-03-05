@@ -1,0 +1,66 @@
+[{
+	"StockSymbol": "TEA",
+	"Type": "Common",
+	"Last Dividend": "1",
+	"Fixed Dividend": "",
+	"Par Value": "100",
+	"TickerPrice": "1000"
+},
+{
+	"StockSymbol": "POP",
+	"Type": "Common",
+	"Last Dividend": "8",
+	"Fixed Dividend": "",
+	"Par Value": "100",
+	"TickerPrice": "1500"
+},
+{
+	"StockSymbol": "ALE",
+	"Type": "Common",
+	"Last Dividend": "23",
+	"Fixed Dividend": "",
+	"Par Value": "60",
+	"TickerPrice": "500"
+},
+{
+	"StockSymbol": "GIN",
+	"Type": "Preferred",
+	"Last Dividend": "8",
+	"Fixed Dividend": "2%",
+	"Par Value": "100",
+	"TickerPrice": "300"
+},
+{
+	"StockSymbol": "JOE",
+	"Type": "Common",
+	"Last Dividend": "13",
+	"Fixed Dividend": "",
+	"Par Value": "250",
+	"TickerPrice": "1200"
+},
+{
+	"StockSymbol": "WKY",
+	"Type": "Preferred",
+	"Last Dividend": "19",
+	"Fixed Dividend": "4%",
+	"Par Value": "210",
+	"TickerPrice": "2000"
+},
+{
+	"StockSymbol": "GNG",
+	"Type": "Preferred",
+	"Last Dividend": "19",
+	"Fixed Dividend": "3%",
+	"Par Value": "70",
+	"TickerPrice": "1900"
+},
+{
+	"StockSymbol": "FLF",
+	"Type": "Common",
+	"Last Dividend": "25",
+	"Fixed Dividend": "",
+	"Par Value": "150",
+	"TickerPrice": "700"
+}]
+
+
