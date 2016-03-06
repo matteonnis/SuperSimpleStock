@@ -83,7 +83,9 @@ public class PrintData {
 				    		formater.format(trade.getTime()).toString()
 				    		);
 				}
-				System.out.format("+-----+----------+-----------+-----------+----------+------------------+%n");
+				if(tradelist.size()>0){
+					System.out.format("+-----+----------+-----------+-----------+----------+------------------+%n");
+				}
 			}
 		}else{
 			System.out.println("Trade list is empty, please aquired data first!");

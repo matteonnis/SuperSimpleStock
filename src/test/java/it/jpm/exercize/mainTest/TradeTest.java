@@ -21,7 +21,6 @@ public class TradeTest extends TestCase {
 	    }
 	    
 	    public void addTestTrades(String stockId) throws Exception{
-	    	 System.out.println("-->"+DataStore.getInstance().getStocksList().size());
 	    	tradeOp.aquiredManualyData(stockId, "45","1", "800");
 	    	tradeOp.aquiredManualyData(stockId, "25","2", "40");
 	    	tradeOp.aquiredManualyData(stockId, "12","1", "402");
@@ -32,12 +31,15 @@ public class TradeTest extends TestCase {
 	     * Test of recordTrade method, of class StockService.
 	     */
 	    public void testRecordTrade() throws Exception {
-	    	stocktest.addTeaStock();
+	    	stocktest.addAllStocks();
 	        System.out.println("recordTrade");
-	        String stockId = "1";
-	        addTestTrades(stockId);
-	         assertNotNull(DataStore.getInstance().getStocksList().get(Integer.valueOf(stockId)).getTrades());
-	        assertEquals(4, DataStore.getInstance().getStocksList().get(Integer.valueOf(stockId)).getTrades().size());
-	      }
+	        int size=DataStore.getInstance().getStocksList().size();
+	        for(int i=0; i<size;i++){
+	        	addTestTrades(String.valueOf(i+1));
+	  	        assertNotNull(DataStore.getInstance().getStocksList().get(i).getTrades());
+	  	        assertEquals(4, DataStore.getInstance().getStocksList().get(i).getTrades().size());	
+	        }
+	        	
+	    }
 
 }

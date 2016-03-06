@@ -29,7 +29,7 @@ public class ParseTrade {
 		Date date = new Date();
 		trade.setId(id);
 		trade.setQuantity(new BigDecimal((String) quantity));
-		trade.setType(Integer.getInteger((String) type));
+		trade.setType(Integer.parseInt((String) type));
 		trade.setPrice((new BigDecimal(price)));
 		trade.setTime(date.getTime());
 		return trade;

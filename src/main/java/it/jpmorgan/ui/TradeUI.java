@@ -27,7 +27,7 @@ public class TradeUI extends UIScan {
 
 			break;
 		case 2:
-			insertNewTrade();
+			 selectStock();
 			break;
 		case 3:
 			tradeOp.seeData();
@@ -97,25 +97,35 @@ public class TradeUI extends UIScan {
 		}
 	}
 	
-	public void insertNewTrade() {
+	public void selectStock() {
         System.out.println("Select stock:");
         String list=tradeOp.getStockSymbolList();
         if(!"".equals(list)){
 	        System.out.println(list);
 	        String stockId = reader.nextLine();
-	        System.out.println("Insert quantitu");
-	        String quantity = reader.nextLine();
-	        System.out.println("Insert trade type (1:buy|2:sell):");
-	        String type = reader.nextLine();
-	        System.out.println("Insert trade price :");
-	        String price= reader.nextLine();
-	        try {
-	        	tradeOp.aquiredManualyData(stockId, quantity, type, price); 
-	        } catch (Exception e) {
-	            e.printStackTrace();
+	        if(tradeOp.existStock(stockId)){
+	        	insertNewTrade(stockId);
+	        }else{
+	        	System.out.println("Please select a valid option stock!");
+	        	 selectStock();
 	        }
         }else{
         	System.out.println("Stock list is empty, please aquired data first!");
         }
     }
+	
+	public void insertNewTrade(String stockId){
+		
+		System.out.println("Insert quantitu");
+        String quantity = reader.nextLine();
+        System.out.println("Insert trade type (1:buy|2:sell):");
+        String type = reader.nextLine();
+        System.out.println("Insert trade price :");
+        String price= reader.nextLine();
+        try {
+        	tradeOp.aquiredManualyData(stockId, quantity, type, price); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
 }

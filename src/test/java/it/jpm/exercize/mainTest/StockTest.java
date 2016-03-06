@@ -29,7 +29,7 @@ public class StockTest extends TestCase {
 	    public void addTeaStock() throws Exception{
 	        String symbol = "TEA";
 	        String type = "1";
-	        String lastDividend = "0";
+	        String lastDividend = "50";
 	        String fixedDividend = "0";
 	        String parValue = "100";
 	        String tickerPrice = "110";

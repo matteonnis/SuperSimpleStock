@@ -40,10 +40,10 @@ public class TradeOperation {
 
 	public void aquiredManualyData(String stockId, String quantity,	String type, String price) {
 		int id = DataStore.getInstance().getStocksList()
-				.get(Integer.getInteger(stockId)-1).getTrades().size() + 1;
+				.get((Integer.parseInt(stockId))-1).getTrades().size() + 1;
 		Trade trade = ParseTrade.parseManualyData(id, quantity, type, price);
 		DataStore.getInstance().getStocksList()
-				.get(Integer.getInteger(stockId)-1).getTrades().add(trade);
+				.get(Integer.parseInt(stockId)-1).getTrades().add(trade);
 
 		seeData();
 	}
@@ -61,5 +61,14 @@ public class TradeOperation {
 					+ stockList.get(i).getStockSymbol();
 		}
 		return list;
+	}
+	
+	public boolean existStock(String stockId){
+		List<Stock> stockList = DataStore.getInstance().getStocksList();
+		if(Integer.parseInt(stockId)<=stockList.size() && Integer.parseInt(stockId)-1>0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
