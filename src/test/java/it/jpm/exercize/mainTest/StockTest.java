@@ -84,18 +84,14 @@ public class StockTest extends TestCase {
 	        addTeaStock();
 	    }
 
-	    
-	    public void testAddAllStocks() throws Exception{
-	        addAllStocks();
-	        assertEquals(5,DataStore.getInstance().getStocksList().size());
-	    }
+	   
 	    /**
-	     * Test of newStock method, of class PortfolioService.
+	     * Test of
 	     */
 	    
-	    public void testNewStockBasic() throws Exception {
-	        System.out.println("newStock");
-	        String symbol = "TEA";
+	    public void testInsertNewStock() throws Exception {
+	        System.out.println("new Stock");
+	        String symbol = "WKS";
 	        String type = "1";
 	        String lastDividend = "0";
 	        String fixedDividend = "0";
@@ -110,5 +106,12 @@ public class StockTest extends TestCase {
 	        assertEquals(new BigDecimal(fixedDividend), DataStore.getInstance().getStocksList().get(lastindex).getFixedDividend());
 	        assertEquals(Costants.STOCK_TYPE[Integer.parseInt(type)-1], DataStore.getInstance().getStocksList().get(lastindex).getType());
 	        
+	    }
+	    
+	    
+	    
+	    public void testAddAllStocks() throws Exception{
+	        addAllStocks();
+	        assertEquals(6,DataStore.getInstance().getStocksList().size());
 	    }
 }
