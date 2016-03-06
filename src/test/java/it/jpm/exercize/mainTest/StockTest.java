@@ -88,30 +88,18 @@ public class StockTest extends TestCase {
 	    /**
 	     * Test of
 	     */
-	    
+	
 	    public void testInsertNewStock() throws Exception {
-	        System.out.println("new Stock");
-	        String symbol = "WKS";
-	        String type = "1";
-	        String lastDividend = "0";
-	        String fixedDividend = "0";
-	        String parValue = "100";
-	        String tickerPrice = "110";
-	        stockOp.aquiredManualyData(symbol, type, lastDividend, fixedDividend, parValue, tickerPrice);   
+	    	addAllStocks();
 	        int lastindex=DataStore.getInstance().getStocksList().size()-1;
-	        assertNotNull(DataStore.getInstance().getStocksList().get(lastindex));
-	        assertEquals(new BigDecimal(lastDividend), DataStore.getInstance().getStocksList().get(lastindex).getLastDividend());
-	        assertEquals(new BigDecimal(parValue), DataStore.getInstance().getStocksList().get(lastindex).getParValue());
-	        assertEquals(new BigDecimal(tickerPrice), DataStore.getInstance().getStocksList().get(lastindex).getTickerPrice());
-	        assertEquals(new BigDecimal(fixedDividend), DataStore.getInstance().getStocksList().get(lastindex).getFixedDividend());
-	        assertEquals(Costants.STOCK_TYPE[Integer.parseInt(type)-1], DataStore.getInstance().getStocksList().get(lastindex).getType());
+	        assertNotNull(DataStore.getInstance().getStocksList().size());
+	        assertEquals(5,DataStore.getInstance().getStocksList().size());
+	        assertEquals(new BigDecimal(50), DataStore.getInstance().getStocksList().get(lastindex).getLastDividend());
+	        assertEquals(new BigDecimal(100), DataStore.getInstance().getStocksList().get(lastindex).getParValue());
+	        assertEquals(new BigDecimal(110), DataStore.getInstance().getStocksList().get(lastindex).getTickerPrice());
+	        assertEquals(new BigDecimal(0), DataStore.getInstance().getStocksList().get(lastindex).getFixedDividend());
+	        assertEquals(Costants.STOCK_TYPE[0], DataStore.getInstance().getStocksList().get(lastindex).getType());
 	        
 	    }
-	    
-	    
-	    
-	    public void testAddAllStocks() throws Exception{
-	        addAllStocks();
-	        assertEquals(6,DataStore.getInstance().getStocksList().size());
-	    }
+	     
 }
